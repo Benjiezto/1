@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent(); //1010
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtShow.Text = "Hello World!";
+        }
     }
 }
