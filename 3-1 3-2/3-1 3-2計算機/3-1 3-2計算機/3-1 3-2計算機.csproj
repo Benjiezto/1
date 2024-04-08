@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{30B29BA5-218A-4AA9-A06F-2F9FDCC90271}</ProjectGuid>
+    <ProjectGuid>{AD582A3E-C36E-40D4-B8C6-904D2F72ED61}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_3_1_3_2</RootNamespace>
-    <AssemblyName>3-1 3-2</AssemblyName>
+    <RootNamespace>_3_1_3_2計算機</RootNamespace>
+    <AssemblyName>3-1 3-2計算機</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

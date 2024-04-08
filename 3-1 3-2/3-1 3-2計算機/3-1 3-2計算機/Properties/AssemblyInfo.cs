@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 組件的一般資訊是由下列的屬性集控制。
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
-[assembly: AssemblyTitle("3-1 3-2")]
+[assembly: AssemblyTitle("3-1 3-2計算機")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("3-1 3-2")]
+[assembly: AssemblyProduct("3-1 3-2計算機")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
-[assembly: Guid("30b29ba5-218a-4aa9-a06f-2f9fdcc90271")]
+[assembly: Guid("ad582a3e-c36e-40d4-b8c6-904d2f72ed61")]
 
 // 組件的版本資訊由下列四個值所組成: 
 //
