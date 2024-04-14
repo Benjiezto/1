@@ -53,6 +53,7 @@
             this.btnAllClear.TabIndex = 0;
             this.btnAllClear.Text = "清除";
             this.btnAllClear.UseVisualStyleBackColor = true;
+            this.btnAllClear.Click += new System.EventHandler(this.btnAllClear_Click);
             // 
             // label1
             // 
