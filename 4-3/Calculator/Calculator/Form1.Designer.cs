@@ -46,6 +46,8 @@
             this.btnZero = new System.Windows.Forms.Button();
             this.btnDot = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnPercentage = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNumber
@@ -55,7 +57,6 @@
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(569, 61);
             this.txtNumber.TabIndex = 1;
-            this.txtNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnThree
             // 
@@ -244,11 +245,35 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnPercentage
+            // 
+            this.btnPercentage.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPercentage.Location = new System.Drawing.Point(99, 326);
+            this.btnPercentage.Name = "btnPercentage";
+            this.btnPercentage.Size = new System.Drawing.Size(109, 49);
+            this.btnPercentage.TabIndex = 27;
+            this.btnPercentage.Text = "%";
+            this.btnPercentage.UseVisualStyleBackColor = true;
+            this.btnPercentage.Click += new System.EventHandler(this.btnPercentage_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBack.Location = new System.Drawing.Point(99, 216);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 49);
+            this.btnBack.TabIndex = 28;
+            this.btnBack.Text = "<<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnPercentage);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEqual);
@@ -293,6 +318,8 @@
         private System.Windows.Forms.Button btnZero;
         private System.Windows.Forms.Button btnDot;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnPercentage;
+        private System.Windows.Forms.Button btnBack;
     }
 }
 

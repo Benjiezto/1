@@ -17,15 +17,9 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+     
 
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnOne_Click(object sender, EventArgs e)
         {
@@ -100,6 +94,7 @@ namespace Calculator
         {
             Select_Operator(3);
         }
+     
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Select_Operator(0);
@@ -127,12 +122,33 @@ namespace Calculator
             operators = -1;
         }
 
+        
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (txtNumber.Text.Length > 0)
+            {
+                txtNumber.Text = txtNumber.Text.Substring(0, txtNumber.Text.Length - 1);
+                if (txtNumber.Text == "")
+                    txtNumber.Text = "0";
+            }
+        }
+
+        private void btnPercentage_Click(object sender, EventArgs e)
+        {
+            float finalResults = 0f;
+            secondNumber = Convert.ToSingle(txtNumber.Text);
+            finalResults = (secondNumber / 100); 
+            txtNumber.Text = string.Format("{0:P2}", finalResults);
+        }
+
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            float finalResults = 0f; //宣告最後計算結果變數
-            secondNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第二個數字的全域變數
+            float finalResults = 0f; // 宣告最後計算結果變數
+            secondNumber = Convert.ToSingle(txtNumber.Text); // 將輸入文字框轉換成浮點數，存入第二個數字的全域變數
 
-            //依照四則運算符號的選擇，進行加減乘除
+       
+            // 依照四則運算符號的選擇，進行加減乘除
             switch (operators)
             {
                 case 0:
@@ -147,16 +163,19 @@ namespace Calculator
                 case 3:
                     finalResults = firstNumber / secondNumber;
                     break;
+
             }
 
-            txtNumber.Text = string.Format("{0:0.##########}", finalResults); //在輸入文字框中，顯示最後計算結果，並且轉換成格式化的字串內容
+            txtNumber.Text = string.Format("{0:0.##########}", finalResults); // 在輸入文字框中，顯示最後計算結果，並且轉換成格式化的字串內容
 
-            //重置所有全域變數
+            // 重置所有全域變數
             firstNumber = 0f;
             secondNumber = 0f;
             operators = -1;
         }
 
-       
+
+
+
     }
 }
