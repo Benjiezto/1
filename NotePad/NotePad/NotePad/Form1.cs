@@ -27,7 +27,7 @@ namespace NotePad
             // 如果希望預設開啟的檔案類型是文字檔案，可以這樣設置
             openFileDialog1.FilterIndex = 1;
             // 如果希望對話方塊在開啟時顯示的初始目錄，可以設置 InitialDirectory
-            openFileDialog1.InitialDirectory = "C:\\";
+            openFileDialog1.InitialDirectory = "D:\\work\\視窗程式\\NotePad";
             // 允許使用者選擇多個檔案
             openFileDialog1.Multiselect = true;
 
@@ -42,31 +42,9 @@ namespace NotePad
                     // 使用者在OpenFileDialog選擇的檔案
                     string selectedFileName = openFileDialog1.FileName;
 
-                    //// 使用 FileStream 打開檔案
-                    //// 建立一個檔案資料流，並且設定檔案名稱與檔案開啟模式為「開啟檔案」
-                    //FileStream fileStream = new FileStream(selectedFileName, FileMode.Open, FileAccess.Read);
-                    //// 讀取資料流
-                    //StreamReader streamReader = new StreamReader(fileStream);
-                    //// 將檔案內容顯示到 RichTextBox 中
-                    //rtbText.Text = streamReader.ReadToEnd();
-                    //// 關閉資料流與讀取資料流
-                    //fileStream.Close();
-                    //streamReader.Close();
-
-                    // 使用 using 與 FileStream 打開檔案
-                    using (FileStream fileStream = new FileStream(selectedFileName, FileMode.Open, FileAccess.Read))
-                    {
-                        // 使用 StreamReader 讀取檔案內容
-                        using (StreamReader streamReader = new StreamReader(fileStream, Encoding.UTF8))
-                        {
-                            // 將檔案內容顯示到 RichTextBox 中
-                            rtbText.Text = streamReader.ReadToEnd();
-                        }
-                    }
-
-                    //// 更為簡單的做法，將檔案內容顯示到 RichTextBox 中
-                    //string fileContent = File.ReadAllText(selectedFileName);
-                    //rtbText.Text = fileContent;
+                    // 更為簡單的做法，將檔案內容顯示到 RichTextBox 中
+                    string fileContent = File.ReadAllText(selectedFileName);
+                    rtbText.Text = fileContent;
                 }
                 catch (Exception ex)
                 {
