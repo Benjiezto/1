@@ -115,7 +115,6 @@ namespace NotePad
             }
             UpdateListBox();
             isUndo = false;
-           ;
         }
 
         private void rtbText_TextChanged(object sender, EventArgs e)
