@@ -36,6 +36,8 @@ namespace NotePad
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnUndo = new System.Windows.Forms.Button();
             this.listUndo = new System.Windows.Forms.ListBox();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -52,7 +54,7 @@ namespace NotePad
             // 
             this.btnSave.Location = new System.Drawing.Point(130, 12);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 34);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "存檔";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -73,9 +75,9 @@ namespace NotePad
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(251, 13);
+            this.btnUndo.Location = new System.Drawing.Point(248, 13);
             this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(97, 33);
+            this.btnUndo.Size = new System.Drawing.Size(112, 33);
             this.btnUndo.TabIndex = 3;
             this.btnUndo.Text = "恢復上一步";
             this.btnUndo.UseVisualStyleBackColor = true;
@@ -90,12 +92,32 @@ namespace NotePad
             this.listUndo.Size = new System.Drawing.Size(188, 379);
             this.listUndo.TabIndex = 4;
             // 
+            // btnRedo
+            // 
+            this.btnRedo.Location = new System.Drawing.Point(366, 13);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(112, 34);
+            this.btnRedo.TabIndex = 5;
+            this.btnRedo.Text = "重作下一步";
+            this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(484, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnRedo);
             this.Controls.Add(this.listUndo);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.rtbText);
@@ -116,6 +138,8 @@ namespace NotePad
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.ListBox listUndo;
+        private System.Windows.Forms.Button btnRedo;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
