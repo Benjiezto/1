@@ -16,6 +16,10 @@ namespace NotePad
         public Form1()
         {
             InitializeComponent();
+
+            InitializeFontComboBox();
+            InitializeFontSizeComboBox();
+            InitializeFontStyleComboBox();
         }
         private bool isUndoRedo = false;                           // 是否在回復或重作階段
         private Stack<string> undoStack = new Stack<string>();     // 回復堆疊
@@ -167,7 +171,72 @@ namespace NotePad
                     listUndo.Items.Add(item);
                 }
             }
+
+        private void InitializeFontComboBox()
+        {
+            foreach (FontFamily font in FontFamily.Families)
+            {
+                comboBoxFont.Items.Add(font.Name);
+            }
+            comboBoxFont.SelectedIndex = 0;
         }
+
+        private void InitializeFontSizeComboBox()
+        {
+            for (int i = 8; i <= 72; i += 2)
+            {
+                comboBoxSize.Items.Add(i);
+            }
+            comboBoxSize.SelectedIndex = 2;
+        }
+
+        private void InitializeFontStyleComboBox()
+        {
+            comboBoxStyle.Items.Add(FontStyle.Regular.ToString());
+            comboBoxStyle.Items.Add(FontStyle.Bold.ToString());
+            comboBoxStyle.Items.Add(FontStyle.Italic.ToString());
+            comboBoxStyle.Items.Add(FontStyle.Underline.ToString());
+            comboBoxStyle.Items.Add(FontStyle.Strikeout.ToString());
+            comboBoxStyle.SelectedIndex = 0;
+        }
+
+
+        private void comboBoxFont_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rtbText.SelectionFont != null)
+            {
+                // 確保選擇的字型、大小和樣式都不為 null
+                string selectedFont = comboBoxFont.SelectedItem?.ToString();
+                string selectedSizeStr = comboBoxSize.SelectedItem?.ToString();
+                string selectedStyleStr = comboBoxStyle.SelectedItem?.ToString();
+
+                if (selectedFont != null && selectedSizeStr != null && selectedStyleStr != null)
+                {
+                    float selectedSize = float.Parse(selectedSizeStr);
+                    FontStyle selectedStyle = (FontStyle)Enum.Parse(typeof(FontStyle), selectedStyleStr);
+
+                    // 獲取當前選擇的文字的字型和樣式
+                    Font currentFont = rtbText.SelectionFont;
+                    FontStyle newStyle = currentFont.Style;
+
+                    // 檢查是否需要應用新的樣式
+                    if (comboBoxStyle.SelectedItem.ToString() == FontStyle.Bold.ToString())
+                        newStyle = FontStyle.Bold;
+                    else if (comboBoxStyle.SelectedItem.ToString() == FontStyle.Italic.ToString())
+                        newStyle = FontStyle.Italic;
+                    else if (comboBoxStyle.SelectedItem.ToString() == FontStyle.Underline.ToString())
+                        newStyle = FontStyle.Underline;
+                    else if (comboBoxStyle.SelectedItem.ToString() == FontStyle.Strikeout.ToString())
+                        newStyle = FontStyle.Strikeout;
+                    else
+                        newStyle = FontStyle.Regular;
+
+                    Font newFont = new Font(selectedFont, selectedSize, newStyle);
+                    rtbText.SelectionFont = newFont;
+                }
+            }
+        }
+    }
 
      
     }
